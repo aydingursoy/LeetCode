@@ -1,0 +1,15 @@
+class Solution:
+    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+        jewlMap = {}
+        inside = 0
+        for j in jewels:
+            if j not in jewlMap:
+                jewlMap[j] = 1
+            if j in jewlMap:
+                jewlMap[j] += 1
+        
+        for s in stones:
+            if s in jewlMap:
+                inside += 1
+        
+        return inside
